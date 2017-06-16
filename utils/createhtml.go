@@ -70,7 +70,7 @@ func Parse(data *model.Nestable) string {
 		//ol闭 </ol>
 		list_one = append(list_one,SetItemEnd())
 		//将一个group的数据加入整体数据
-		tmp = append(tmp,SetList(list_one))
+		tmp = append(tmp,list_one...)
 	}
 	fmt.Println(menu+strings.Join(tmp,"\n"))
 	//第一层加OL 闭合

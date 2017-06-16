@@ -43,3 +43,25 @@ func Test() *Nestable {
 	//fmt.Println(r.Group[0].Id)
 	return &r
 }
+
+func TestStruct() *Nestable {
+	var JsonResult Nestable
+	JsonResult.Name = "Sn"
+
+	JsonChildren := []Children{}
+	JsonChildren = append(JsonChildren,Children{
+		Id:"主机信息",
+		Children:[]Handle{
+			Handle{Id:"hostname"},
+			Handle{Id:"idc"},
+		},
+	})
+
+	JsonResult.Group = JsonChildren
+	b,err := json.Marshal(&JsonResult)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println("1111111111111",string(b))
+	return &JsonResult
+}
