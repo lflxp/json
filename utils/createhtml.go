@@ -20,11 +20,11 @@ func SetHandle(data string) string {
 }
 
 func SetItem(id int,handle string) string {
-	return fmt.Sprintf(`<li class="dd-item" data-id="%d">%s</li>`,id,SetHandle(handle))
+	return fmt.Sprintf(`<li class="dd-item item-orange" data-id="%d">%s</li>`,id,SetHandle(handle))
 }
 
 func SetItemStart(id int,handle string) string {
-	return fmt.Sprintf(`<li class="dd-item" data-id="%d">%s`,id,SetHandle(handle))
+	return fmt.Sprintf(`<li class="dd-item item-red" data-id="%d">%s`,id,SetHandle(handle))
 }
 
 func SetItemEnd() string {
